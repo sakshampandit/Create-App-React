@@ -1,0 +1,48 @@
+npx create-react-app background-toggle-app
+cd background-toggle-app
+
+npx create-react-app background-toggle-app
+cd background-toggle-app
+
+
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [isBackgroundDark, setIsBackgroundDark] = useState(false);
+
+  const handleToggle = () => {
+    setIsBackgroundDark((prev) => !prev);
+  };
+
+  const backgroundColor = isBackgroundDark ? '#333' : '#f0f0f0';
+  const textColor = isBackgroundDark ? '#f0f0f0' : '#333';
+
+  return (
+    <div className="App" style={{ backgroundColor, color: textColor }}>
+      <h1>Background Toggle App</h1>
+      <button onClick={handleToggle}>Toggle Background</button>
+    </div>
+  );
+}
+
+export default App;
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+npm start
