@@ -1,0 +1,39 @@
+import React from 'react';
+
+const GreetingCard = (props) => {
+  const { name, greeting, backgroundColor, textColor } = props;
+
+  const cardStyle = {
+    backgroundColor: backgroundColor || '#f0f0f0',
+    color: textColor || '#333',
+    padding: '20px',
+    borderRadius: '8px',
+    textAlign: 'center',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  };
+
+  return (
+    <div style={cardStyle}>
+      <h2>{greeting ? `${greeting}, ${name}!` : `Hello, ${name}!`}</h2>
+    </div>
+  );
+};
+
+export default GreetingCard;
+
+
+
+import React from 'react';
+import GreetingCard from './GreetingCard';
+
+const App = () => {
+  return (
+    <div>
+      <GreetingCard name="John" />
+      <GreetingCard name="Jane" greeting="Hi" backgroundColor="#007bff" textColor="#fff" />
+      <GreetingCard name="Mike" greeting="Hey there" backgroundColor="#ffd700" />
+    </div>
+  );
+};
+
+export default App;
